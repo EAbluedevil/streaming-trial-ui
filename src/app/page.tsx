@@ -43,18 +43,24 @@ export default function Home() {
           console.log('Rendering trial:', trial);
           return (
             <div
-              key={i}
-              className="border p-4 rounded shadow-md mb-4 bg-white"
-            >
-              <h2 className="text-xl font-bold">{trial.service}</h2>
-              <p>Status: {trial.trialStatus}</p>
-              <p>Last Seen: {trial.trialLastSeen}</p>
-              {trial.notes && (
-                <p className="text-sm mt-2 text-gray-800">
-                  Note: {trial.notes}
-                </p>
-              )}
-            </div>
+  key={i}
+  className="bg-slate-100 border border-slate-300 rounded-xl p-5 shadow-md mb-6 transition hover:shadow-lg"
+>
+  <h2 className="text-2xl font-semibold text-slate-800 mb-1">
+    {trial.service}
+  </h2>
+  <p className="text-base font-medium text-slate-700">
+    <span className="text-slate-500">Status:</span> {trial.trialStatus}
+  </p>
+  <p className="text-base text-slate-600">
+    <span className="text-slate-500">Last Seen:</span> {trial.trialLastSeen}
+  </p>
+  {trial.notes && (
+    <p className="text-sm mt-3 text-slate-700 italic">
+      Note: {trial.notes}
+    </p>
+  )}
+</div>
           );
         })
       )}
