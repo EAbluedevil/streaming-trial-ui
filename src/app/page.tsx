@@ -50,8 +50,21 @@ export default function Home() {
     {trial.service}
   </h2>
   <p className="text-base font-medium text-slate-700">
-    <span className="text-slate-500">Status:</span> {trial.trialStatus}
-  </p>
+  <span className="text-slate-500">Status:</span>{' '}
+  <span
+    className={`inline-block px-2 py-1 rounded-md text-sm font-semibold ${
+      trial.trialStatus === 'Active'
+        ? 'bg-green-100 text-green-800'
+        : trial.trialStatus === 'Paused'
+        ? 'bg-yellow-100 text-yellow-800'
+        : trial.trialStatus === 'Not Available'
+        ? 'bg-red-100 text-red-800'
+        : 'bg-slate-200 text-slate-600'
+    }`}
+  >
+    {trial.trialStatus}
+  </span>
+</p>
   <p className="text-base text-slate-600">
     <span className="text-slate-500">Last Seen:</span> {trial.trialLastSeen}
   </p>
