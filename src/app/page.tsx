@@ -13,6 +13,7 @@ type TrialEntry = {
 
 export default function Home() {
   const [trials, setTrials] = useState<TrialEntry[]>([]);
+  const [success, setSuccess] = useState("");
 
   useEffect(() => {
     const fetchTrials = async () => {
@@ -35,51 +36,56 @@ export default function Home() {
 
       {/* Signup Form */}
       <form
-        onSubmit={async (e) => {
-          e.preventDefault();
-          const emailInput = e.currentTarget.elements.namedItem("email") as HTMLInputElement;
-          const email = emailInput.value;
+  onSubmit={async (e) => {
+    e.preventDefault();
+    const emailInput = e.currentTarget.elements.namedItem("email") as HTMLInputElement;
+    const email = emailInput.value;
 
-          try {
-            const res = await fetch("https://streaming-trial-api.onrender.com/api/signup-email", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ email }),
-            });
+    try {
+      const res = await fetch("https://streaming-trial-api.onrender.com/api/signup-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
 
-            if (res.ok) {
-              alert("Thanks! You’ll get updates when trials change.");
-              emailInput.value = "";
-            } else {
-              alert("Something went wrong. Try again.");
-            }
-          } catch (err) {
-            console.error("Error submitting email:", err);
-            alert("Network error.");
-          }
-        }}
-        className="mb-10 w-full max-w-md"
-      >
-        <h2 className="text-lg font-semibold mb-2">Get alerted when trials change</h2>
-        <div className="flex gap-2">
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="you@email.com"
-            className="flex-1 p-2 border border-gray-300 rounded-lg"
-          />
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-          >
-            Sign Up
-          </button>
-        </div>
-        <p className="text-xs text-gray-500 mt-1">
-          By signing up, you agree to our Terms and consent to receive trial alerts.
-        </p>
-      </form>
+      if (res.ok) {
+        setSuccess("Thanks! You’ll get updates when trials change.");
+        emailInput.value = "";
+        setTimeout(() => setSuccess(""), 4000);
+      } else {
+        setSuccess("Something went wrong. Try again.");
+      }
+    } catch (err) {
+      setSuccess("Network error. Try again.");
+    }
+  }}
+  className="mb-10 w-full max-w-md"
+>
+  <h2 className="text-lg font-semibold mb-2">Get alerted when trials change</h2>
+  <div className="flex gap-2">
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@email.com"
+      className="flex-1 p-2 border border-gray-300 rounded-lg"
+    />
+    <button
+      type="submit"
+      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+    >
+      Sign Up
+    </button>
+  </div>
+  <p className="text-xs text-gray-500 mt-1">
+    By signing up, you agree to our Terms and consent to receive trial alerts.
+  </p>
+
+  {/* Success Message */}
+  {success && (
+    <p className="mt-4 text-green-600 text-sm font-medium">{success}</p>
+  )}
+</form>
 
       {trials.length === 0 ? (
         <p className="text-gray-500">No trials found or still loading...</p>
