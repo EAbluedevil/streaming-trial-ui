@@ -20,7 +20,6 @@ export default function Home() {
         const res = await axios.get<TrialEntry[]>(
           'https://streaming-trial-api.onrender.com/api/streaming-trials'
         );
-        console.log('Fetched trials:', res.data);
         setTrials(res.data);
       } catch (err) {
         console.error('Error fetching trials:', err);
