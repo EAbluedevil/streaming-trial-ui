@@ -31,8 +31,6 @@ export default function Home() {
 
   return (
     <main className="max-w-3xl mx-auto py-10 px-4">
-      <h3 className="text-red-600 font-bold mb-4">🔥 LIVE TEST: CODE UPDATED 🔥</h3>
-
       <h1 className="text-3xl font-bold mb-6">Streaming Trial Tracker</h1>
 
       <form
@@ -66,7 +64,7 @@ export default function Home() {
             type="email"
             name="email"
             required
-            placeholder="your@email.com"
+            placeholder="you@email.com"
             className="flex-1 p-2 border border-gray-300 rounded-lg"
           />
           <button
