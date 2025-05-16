@@ -21,7 +21,7 @@ export default function Home() {
           "https://streaming-trial-api.onrender.com/api/streaming-trials"
         );
         setTrials(res.data);
-      } catch {
+      } catch (err) {
         console.error("Error fetching trials:", err);
       }
     };
@@ -33,6 +33,7 @@ export default function Home() {
     <main className="max-w-3xl mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold mb-6">Streaming Trial Tracker</h1>
 
+      {/* Signup Form */}
       <form
         onSubmit={async (e) => {
           e.preventDefault();
@@ -52,7 +53,8 @@ export default function Home() {
             } else {
               alert("Something went wrong. Try again.");
             }
-          } catch {
+          } catch (err) {
+            console.error("Error submitting email:", err);
             alert("Network error.");
           }
         }}
