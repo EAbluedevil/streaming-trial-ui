@@ -35,7 +35,6 @@ export default function Home() {
 
       <h1 className="text-3xl font-bold mb-6">Streaming Trial Tracker</h1>
 
-      {/* Signup Form */}
       <form
         onSubmit={async (e) => {
           e.preventDefault();
@@ -82,7 +81,6 @@ export default function Home() {
         </p>
       </form>
 
-      {/* Trial Cards */}
       {trials.length === 0 ? (
         <p className="text-gray-500">No trials found or still loading...</p>
       ) : (
@@ -118,7 +116,6 @@ export default function Home() {
         ))
       )}
 
-      {/* Footer */}
       <footer className="mt-10 text-sm text-gray-400 text-center">
         © {new Date().getFullYear()} Trial Tracker. All rights reserved.
       </footer>
