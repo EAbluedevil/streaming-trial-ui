@@ -1,9 +1,7 @@
-'use client';
+"use client";
 
-<h3 className="text-red-600 font-bold">🔥 LIVE TEST: CODE UPDATED 🔥</h3>
-
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 type TrialEntry = {
   service: string;
@@ -20,11 +18,11 @@ export default function Home() {
     const fetchTrials = async () => {
       try {
         const res = await axios.get<TrialEntry[]>(
-          'https://streaming-trial-api.onrender.com/api/streaming-trials'
+          "https://streaming-trial-api.onrender.com/api/streaming-trials"
         );
         setTrials(res.data);
       } catch (err) {
-        console.error('Error fetching trials:', err);
+        console.error("Error fetching trials:", err);
       }
     };
 
@@ -33,6 +31,8 @@ export default function Home() {
 
   return (
     <main className="max-w-3xl mx-auto py-10 px-4">
+      <h3 className="text-red-600 font-bold mb-4">🔥 LIVE TEST: CODE UPDATED 🔥</h3>
+
       <h1 className="text-3xl font-bold mb-6">Streaming Trial Tracker</h1>
 
       {/* Signup Form */}
@@ -93,16 +93,16 @@ export default function Home() {
           >
             <h2 className="text-2xl font-semibold text-slate-800 mb-1">{trial.service}</h2>
             <p className="text-base font-medium text-slate-700">
-              <span className="text-slate-500">Status:</span>{' '}
+              <span className="text-slate-500">Status:</span>{" "}
               <span
                 className={`inline-block px-2 py-1 rounded-md text-sm font-semibold ${
-                  trial.trialStatus === 'Active'
-                    ? 'bg-green-100 text-green-800'
-                    : trial.trialStatus === 'Paused'
-                    ? 'bg-yellow-100 text-yellow-800'
-                    : trial.trialStatus === 'Not Available'
-                    ? 'bg-red-100 text-red-800'
-                    : 'bg-slate-200 text-slate-600'
+                  trial.trialStatus === "Active"
+                    ? "bg-green-100 text-green-800"
+                    : trial.trialStatus === "Paused"
+                    ? "bg-yellow-100 text-yellow-800"
+                    : trial.trialStatus === "Not Available"
+                    ? "bg-red-100 text-red-800"
+                    : "bg-slate-200 text-slate-600"
                 }`}
               >
                 {trial.trialStatus}
@@ -112,9 +112,7 @@ export default function Home() {
               <span className="text-slate-500">Last Seen:</span> {trial.trialLastSeen}
             </p>
             {trial.notes && (
-              <p className="text-sm mt-3 text-slate-700 italic">
-                Note: {trial.notes}
-              </p>
+              <p className="text-sm mt-3 text-slate-700 italic">Note: {trial.notes}</p>
             )}
           </div>
         ))
