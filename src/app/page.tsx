@@ -1,7 +1,1 @@
-export default function Home() {
-  return (
-    <main>
-      <h1>🚨 THIS IS THE UPDATED HOMEPAGE — FROM TERMINAL TEST 🚨</h1>
-    </main>
-  );
-}
+<h1>✅ This is the final deploy test – it should appear live!</h1>
