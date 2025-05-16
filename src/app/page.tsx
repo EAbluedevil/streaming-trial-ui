@@ -80,3 +80,6 @@ export default function Home() {
     </main>
   );
 }
+<footer className="mt-10 text-sm text-gray-400 text-center">
+  © {new Date().getFullYear()} Trial Tracker. All rights reserved.
+</footer>
