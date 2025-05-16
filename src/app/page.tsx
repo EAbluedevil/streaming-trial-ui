@@ -21,7 +21,7 @@ export default function Home() {
           "https://streaming-trial-api.onrender.com/api/streaming-trials"
         );
         setTrials(res.data);
-      } catch (err) {
+      } catch {
         console.error("Error fetching trials:", err);
       }
     };
@@ -52,7 +52,7 @@ export default function Home() {
             } else {
               alert("Something went wrong. Try again.");
             }
-          } catch (err) {
+          } catch {
             alert("Network error.");
           }
         }}
