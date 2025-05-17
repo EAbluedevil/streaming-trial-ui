@@ -50,6 +50,7 @@ export default function Home() {
 
             if (res.ok) {
               setSuccess("Thanks! You’ll get updates when trials change.");
+              console.log("✅ Trial signup submitted to backend");
               emailInput.value = "";
               setTimeout(() => setSuccess(""), 4000);
             } else {
