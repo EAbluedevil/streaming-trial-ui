@@ -13,7 +13,7 @@ type TrialEntry = {
 
 export default function Home() {
   const [trials, setTrials] = useState<TrialEntry[]>([]);
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     const fetchTrials = async () => {
@@ -49,15 +49,15 @@ export default function Home() {
             });
 
             if (res.ok) {
-              setSuccess("success");
+              setSuccess(true);
               console.log("✅ Trial signup submitted to backend");
               emailInput.value = "";
-              setTimeout(() => setSuccess(""), 4000);
+              setTimeout(() => setSuccess(false), 4000);
             } else {
-              setSuccess("Something went wrong. Try again.");
+              alert("Something went wrong. Try again.");
             }
           } catch {
-            setSuccess("Network error. Try again.");
+            alert("Network error. Try again.");
           }
         }}
         className="mb-10 w-full max-w-md"
@@ -84,12 +84,12 @@ export default function Home() {
 
         {/* Success Message */}
         {success && (
-    <div className="mt-4 bg-green-50 border border-green-300 text-green-800 p-4 rounded-lg shadow-sm">
-      <h3 className="font-bold text-lg mb-1">🎉 You're in!</h3>
-      <p className="text-sm mb-1">You’ll get alerts when trial deals change.</p>
-      <p className="text-sm">Want to save even more? Refer a friend and get perks — coming soon.</p>
-    </div>
-  )}
+          <div className="mt-4 bg-green-50 border border-green-300 text-green-800 p-4 rounded-lg shadow-sm">
+            <h3 className="font-bold text-lg mb-1">🎉 You're in!</h3>
+            <p className="text-sm mb-1">You’ll get alerts when trial deals change.</p>
+            <p className="text-sm">Want to save even more? Refer a friend and get perks — coming soon.</p>
+          </div>
+        )}
       </form>
 
       {trials.length === 0 ? (
