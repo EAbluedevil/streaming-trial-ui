@@ -84,8 +84,13 @@ export default function Home() {
 
         {/* Success Message */}
         {success && (
-          <p className="mt-4 text-green-600 text-sm font-medium">{success}</p>
-        )}
+    <div className="mt-4 bg-green-50 border border-green-300 text-green-800 p-4 rounded-lg shadow-sm">
+      <h3 className="font-bold text-lg mb-1">🎉 You're in!</h3>
+      <p className="text-sm mb-1">You’ll get alerts when trial deals change.</p>
+      <p className="text-sm">Want to save even more? Refer a friend and get perks — coming soon.</p>
+    </div>
+  )}
+  
       </form>
 
       {trials.length === 0 ? (
