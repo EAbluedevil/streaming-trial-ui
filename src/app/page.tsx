@@ -90,7 +90,6 @@ export default function Home() {
       <p className="text-sm">Want to save even more? Refer a friend and get perks — coming soon.</p>
     </div>
   )}
-  
       </form>
 
       {trials.length === 0 ? (
