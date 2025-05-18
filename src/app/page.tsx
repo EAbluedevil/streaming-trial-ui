@@ -34,6 +34,9 @@ export default function Home() {
   return (
     <main className="max-w-3xl mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold mb-6">Streaming Trial Tracker</h1>
+      <p className="text-lg text-slate-600 mt-2 mb-6">
+  Track free streaming trials. Save money. No spam. No credit card needed.
+</p>
 
       {/* Signup Form */}
       <form
@@ -63,6 +66,10 @@ export default function Home() {
         }}
         className="mb-10 w-full max-w-md"
       >
+      <div className="inline-block bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+  Early Access – Free!
+</div>
+
         <h2 className="text-lg font-semibold mb-2">Get alerted when trials change</h2>
         <div className="flex gap-2">
           <input
@@ -92,6 +99,9 @@ export default function Home() {
           </div>
         )}
       </form>
+
+      <hr className="my-10 border-slate-300" />
+      <h2 className="text-xl font-semibold mb-4">Current Trials</h2>
 
       {trials.length === 0 ? (
         <p className="text-gray-500">No trials found or still loading...</p>
@@ -129,8 +139,9 @@ export default function Home() {
       )}
 
       <footer className="mt-10 text-sm text-gray-400 text-center">
-        © {new Date().getFullYear()} Trial Tracker. All rights reserved.
-      </footer>
+  © {new Date().getFullYear()} Trial Tracker. All rights reserved. <br />
+  Built to help you save. Feedback? <a href="mailto:youremail@example.com" className="underline">Email us</a>.
+</footer>
     </main>
   );
 }
