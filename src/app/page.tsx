@@ -140,7 +140,7 @@ export default function Home() {
 
       <footer className="mt-10 text-sm text-gray-400 text-center">
   © {new Date().getFullYear()} Trial Tracker. All rights reserved. <br />
-  Built to help you save. Feedback? <a href="mailto:youremail@example.com" className="underline">Email us</a>.
+  Built to help you save. Feedback? <a href="mailto:sholane75@gmail.com" className="underline">Email us</a>.
 </footer>
     </main>
   );
