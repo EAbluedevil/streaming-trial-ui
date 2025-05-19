@@ -33,6 +33,12 @@ export default function Home() {
 
   return (
     <main className="max-w-3xl mx-auto py-10 px-4">
+  <img
+    src="/logo.png"
+    alt="Subscription Hack Logo"
+    className="w-32 mx-auto mb-6"
+  />
+  <h1 className="text-3xl font-bold mb-6 text-center">Streaming Trial Tracker</h1>
     <h1 className="text-3xl font-bold mb-3 text-blue-800">Stop Wasting Money on Streaming</h1>
 <p className="text-base text-slate-700 mb-6">
 Track free trials. Get alerts before they vanish. Save hundreds a year — effortlessly.
