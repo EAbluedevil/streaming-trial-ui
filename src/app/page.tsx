@@ -33,20 +33,22 @@ export default function Home() {
 
   return (
     <main className="max-w-3xl mx-auto py-10 px-4">
-  <img
-    src="/logo.png"
-    alt="Subscription Hack Logo"
-    className="w-32 mx-auto mb-6"
-  />
-  <h1 className="text-3xl font-bold mb-6 text-center">Streaming Trial Tracker</h1>
-  <h1 className="text-3xl font-bold mb-3 text-yellow-300 drop-shadow-lg text-center">
-Stop Wasting Money on Streaming
+    <img
+  src="/logo.png"
+  alt="Subscription Hack Logo"
+  className="w-32 mx-auto mb-6"
+/>
+
+<h1 className="text-3xl font-bold mb-4 text-yellow-300 drop-shadow-lg text-center">
+  Stop Wasting Money on Streaming
 </h1>
-<p className="text-base text-white mb-6 drop-shadow-sm text-center">
-Track free trials. Get alerts before they vanish. Save hundreds a year — effortlessly.
+
+<p className="text-lg text-white drop-shadow-sm text-center">
+  Track free trials. Get alerts before they vanish.
 </p>
-      <p className="text-lg text-slate-600 mt-2 mb-6">
-  Track free streaming trials. Save money. No spam. No credit card needed.
+
+<p className="text-lg text-slate-300 italic text-center mb-6">
+  No spam. No card. Just smart, effortless savings.
 </p>
 
       {/* Signup Form */}
